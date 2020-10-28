@@ -1,7 +1,7 @@
 main {
 
     color: yellow;
-    background-image: url("../img/footer.png");
+    background-image: url("../../assets/img/footer.png");
     background-repeat: no-repeat;
     background-size: 100%;
     display: flex;

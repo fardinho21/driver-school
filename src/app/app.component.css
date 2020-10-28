@@ -3,6 +3,7 @@
     /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     height: 100%;
 }
 
@@ -16,20 +17,27 @@ app-header {
 main {
     display: flex;
     flex-direction: row;
-    /* border: 5px solid orange; */
+    border: 5px solid orange;
 }
 
-#sidenav {
-    /* border: 5px solid green; */
-    left: 0;
-    top: 0;
+#sidenav { 
+    border:5px solid red;
+    position: sticky;
+    left:0;
 }
+
 
 #content {
-    /* border: 5px solid purple; */
+    border: 10px solid purple;
+    margin:auto;
+    height: inherit;
+    width: 50%;
+    
 
 }
 
 app-footer {
     z-index: 100;
+    border: 5px solid green;
+
 }

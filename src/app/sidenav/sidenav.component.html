@@ -4,19 +4,18 @@
             Menu
         </h2>
         <section id="content">
-            <button mat-flat-button color="primary">
+            <button mat-flat-button color="primary" (click)='onNavigate("home")'>
                 Home
             </button>
-            <button mat-flat-button color="primary">
+            <button mat-flat-button color="primary" (click)='onNavigate("offers")'>
                 What We Offer
             </button>
-            <button mat-flat-button color="primary">
+            <button mat-flat-button color="primary" (click)='onNavigate("signup")'>
                 Sign Up
             </button>
-            <button mat-flat-button color="primary">
+            <button mat-flat-button color="primary" (click)='onNavigate("login")'>
                 Log In
             </button>
         </section>
-
     </mat-drawer>
 </mat-drawer-container>

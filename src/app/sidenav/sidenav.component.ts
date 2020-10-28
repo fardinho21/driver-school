@@ -1,6 +1,8 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { ManagerService } from "../manager.service";
+import { Router } from "@angular/router";
+
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -10,7 +12,7 @@ export class SidenavComponent implements OnInit {
 
   @ViewChild("drawer", {static: false}) sideNavDrawer : MatDrawer;
 
-  constructor(private manager : ManagerService) { }
+  constructor(private manager : ManagerService, private router: Router) { }
 
   ngOnInit(): void {
     
@@ -18,6 +20,11 @@ export class SidenavComponent implements OnInit {
 
   toggleDrawer(){
     this.sideNavDrawer.toggle()
+  }
+
+  onNavigate(path : string) {
+    const p = "/"+path;
+    this.router.navigate([p]);
   }
 
 
