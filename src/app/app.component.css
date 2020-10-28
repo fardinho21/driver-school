@@ -1,43 +1,77 @@
+ng-container {
+    position: absolute;
+}
 
-#wrapper {
-    /* border: 2px solid red; */
+mat-drawer-container {
+    position: absolute;
+    top: 125px;
+    bottom: 60px;
+    left:0;
+    right: 0;
+    /* border: 10px solid red; */
+}
+mat-drawer{
+    width: 200px;
+}
+
+
+
+#header {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#title {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    justify-content: center;
 }
 
-
-app-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-main {
+#header-buttons {
     display: flex;
     flex-direction: row;
-    border: 5px solid orange;
-}
-
-#sidenav { 
-    border:5px solid red;
-    position: sticky;
-    left:0;
+    justify-content: space-evenly;
 }
 
 
-#content {
-    border: 10px solid purple;
-    margin:auto;
-    height: inherit;
-    width: 50%;
+#social button {
+    margin: 1rem;
     
-
 }
 
-app-footer {
-    z-index: 100;
-    border: 5px solid green;
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* border: 5px solid red; */
+    z-index: 1;
+}
 
+#footer img {
+    position: absolute;
+    left:0;
+    width: 100%;
+    z-index: -1;
+    height: auto;
+}
+
+
+#sidenav-buttons {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    height: 70%;
+}
+#sidenav-buttons button {
+    margin-top: 1rem;
+    transition-duration: 0.5s;
+}
+
+#sidenav-buttons button:hover {
+    background-color: rgb(254,214,0);
+    color: black;
 }

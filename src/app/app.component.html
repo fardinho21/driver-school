@@ -1,22 +1,82 @@
+<ng-container>
+
+  <mat-toolbar id="header" color="primary">
 
 
-<div id="wrapper">
+    <mat-toolbar-row id="title">
+      <h1>Driver school</h1>
+    </mat-toolbar-row>
 
-  <app-header (toggleSidenav)="sidenav.toggleDrawer()"></app-header >
+    <mat-toolbar-row id="header-buttons">
+      <button mat-flat-button color="accent" (click)="sidenav.toggle()">
+        <mat-icon>
+          view_sidebar
+        </mat-icon>
+      </button>
+      
+      <section id="social">
+        <button mat-flat-button color="accent">      
+          <mat-icon>facebook</mat-icon>
+        </button>
   
-  <main>
-    <section id="sidenav">
-      <app-sidenav #sidenav></app-sidenav>
-    </section>
-
-    <section id="content">
-      <router-outlet></router-outlet>
-    </section>
-
-  </main>
+        <button mat-flat-button color="accent">
+          <i class="fab fa-instagram fa-2x"></i>
+        </button>
   
-  <app-footer>
+        <button mat-flat-button color="accent">
+          <i class="fab fa-twitter fa-2x"></i>
+        </button>
+      </section>
+    </mat-toolbar-row>
+    
 
-  </app-footer>
 
-</div>
+  </mat-toolbar>
+
+  <mat-drawer-container>
+
+    <mat-drawer #sidenav mode="side">
+
+      <section id="sidenav-buttons">
+        <button mat-flat-button color="primary" (click)="onNavigate('home')">
+          Home
+        </button>
+
+        <button mat-flat-button color="primary" (click)="onNavigate('offers')">
+          Our Offers
+        </button>
+
+        <button mat-flat-button color="primary" (click)="onNavigate('signup')">
+          Sign Up
+        </button>
+
+        <button mat-flat-button color="primary" (click)="onNavigate('login')">
+          Log In
+        </button>
+      </section>
+
+
+
+    </mat-drawer>
+
+
+    <mat-drawer-content>
+      <router-outlet>
+
+      </router-outlet>
+    </mat-drawer-content>
+    
+  </mat-drawer-container>
+
+
+  <mat-toolbar id="footer" color="primary">
+    <h1>Footer</h1>
+    
+  </mat-toolbar>
+
+
+
+</ng-container>
+
+
+

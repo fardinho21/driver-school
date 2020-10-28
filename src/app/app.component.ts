@@ -9,7 +9,11 @@ import { Router } from "@angular/router";
 export class AppComponent {
   title = 'driver-school';
 
-  constructor() {
+  constructor(private rotuer: Router) {
+    
+  }
 
+  onNavigate(path: string) {
+    this.rotuer.navigate(['/'+path])
   }
 }
