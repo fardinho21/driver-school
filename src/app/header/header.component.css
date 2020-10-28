@@ -16,13 +16,16 @@ header h1 {
 }
 
 
-
-
 #buttons {
     /* border: 2px solid red; */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+#social {
+    display: flex;
+    flex-direction: row;
 }
 
 button {
