@@ -12,6 +12,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from "./material.module";
 
 
+declare global {
+  export interface UserCredentials {
+    firstName: string,
+    lastName: string,
+    birthDate: Date,
+    isMinor: boolean,
+    registeredEmail: string,
+    password: string,
+    parentFirstName?: string,
+    parentLastName?: string,
+    
+  }
+}
+
 @NgModule({
   declarations: [
     AppComponent,

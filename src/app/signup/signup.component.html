@@ -16,7 +16,7 @@
             </mat-form-field>
 
             <mat-form-field>
-                <mat-label>Your Birthdate</mat-label>
+                <mat-label>Your Birthdate - MM/DD/YYYY</mat-label>
                 <input matInput [(ngModel)]="birthDate" name="bdate" required [max]="maxDate" [min]="minDate" [matDatepicker]="picker">
                 <mat-error>Birthdate is required</mat-error>
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -45,6 +45,18 @@
             <mat-form-field>
                 <input type="email" ngModel name="email" matInput required email [placeholder]="message">
                 <mat-error>Email is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input type="password" ngModel #p1="ngModel" name="password1" matInput required password minlength="6" placeholder="Password">
+                <mat-error *ngIf="p1.hasError('required')">Password is required</mat-error>
+                <mat-error *ngIf="p1.hasError('minlength')">Password must be at least 6 characters long</mat-error>
+            </mat-form-field>
+            
+
+            <mat-form-field>
+                <input type="password" ngModel #p2="ngModel" name="password2" matInput required password minlength="6" placeholder="Confirm Password">
+                <mat-error *ngIf="p1.control.value != p2.control.value || p2.hasError('required')">Passwords must match</mat-error>
             </mat-form-field>
 
             <div>

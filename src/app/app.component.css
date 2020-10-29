@@ -21,6 +21,21 @@ mat-drawer{
     top: 0;
     left: 0;
     right: 0;
+    text-align: ri;
+}
+
+#footer {
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    left:0;
+    right: 0;
+}
+
+#footer div {
+    width: 100%;
+    margin: 0;
+    text-align: right;
 }
 
 #title {

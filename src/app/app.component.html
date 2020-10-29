@@ -63,16 +63,16 @@
         </button>
 
         <!-- only show th e log in and sign up buttons when logged out -->
-        <button mat-flat-button color="primary" (click)="onNavigate('signup')">
+        <button *ngIf="!loggedIn" mat-flat-button color="primary" (click)="onNavigate('signup')">
           Sign Up
         </button>
 
-        <button mat-flat-button color="primary" (click)="onNavigate('login')">
+        <button *ngIf="!loggedIn" mat-flat-button color="primary" (click)="onNavigate('login')">
           Log In
         </button>
 
         <!-- only show this button when the user is logged in -->
-        <button mat-flat-button color="primary" (click)="onNavigate('userContent')">
+        <button *ngIf="loggedIn" mat-flat-button color="primary" (click)="onNavigate('userContent')">
           Your Stuff
         </button>
       </section>
@@ -87,8 +87,16 @@
 
       </router-outlet>
     </mat-drawer-content>
+
+
     
   </mat-drawer-container>
+<!-- 
+  <mat-toolbar id="footer" color="primary">
+    <div>
+      <i class="fab fa-cc-paypal fa-2x"></i>
+    </div>
+  </mat-toolbar> -->
 
 
 </ng-container>
