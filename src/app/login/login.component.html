@@ -1,1 +1,28 @@
-<p>login works!</p>
+<main>
+
+    <section>
+        <h1>Log In</h1>
+        <form #f="ngForm">
+            <mat-form-field>
+                <input type="email" ngModel name="email" #em="ngModel" email required matInput  minlength="6" placeholder="Email">
+                <mat-error *ngIf="pw.hasError('required')">Email is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="password" ngModel name="password" #pw="ngModel" password required minlength="6" matInput placeholder="Password">
+                <mat-error *ngIf="pw.hasError('required')">Password is required</mat-error>
+                <mat-error *ngIf="pw.hasError('minlength')">Password must be at least 6 characters long</mat-error>
+            </mat-form-field>
+
+            <div>
+                <button mat-flat-button color="primary" [disabled]="f.invalid || f.pristine">
+                    Log In
+                </button> 
+            </div>
+
+        </form>
+
+
+    </section>
+
+
+</main>

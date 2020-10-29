@@ -13,19 +13,35 @@
           view_sidebar
         </mat-icon>
       </button>
+
+      <button mat-flat-button color="accent">
+        <mat-icon>phone</mat-icon> (555) 555-5555 
+      </button>
       
+      <button mat-flat-button color="accent">
+        <mat-icon>assignment</mat-icon> driverschool@info.com
+      </button>
+
       <section id="social">
-        <button mat-flat-button color="accent">      
-          <mat-icon>facebook</mat-icon>
-        </button>
-  
-        <button mat-flat-button color="accent">
-          <i class="fab fa-instagram fa-2x"></i>
-        </button>
-  
-        <button mat-flat-button color="accent">
-          <i class="fab fa-twitter fa-2x"></i>
-        </button>
+
+        <a href="http://facebook.com">
+          <button mat-flat-button color="accent">
+            <mat-icon>facebook</mat-icon>
+          </button>
+        </a>
+
+        <a href="http://instagram.com">
+          <button mat-flat-button color="accent">
+            <i class="fab fa-instagram fa-2x"></i>
+          </button>
+        </a>
+
+        <a href="http://twitter.com">
+          <button mat-flat-button color="accent">
+            <i class="fab fa-twitter fa-2x"></i>
+          </button>
+        </a>   
+
       </section>
     </mat-toolbar-row>
     
@@ -46,12 +62,18 @@
           Our Offers
         </button>
 
+        <!-- only show th e log in and sign up buttons when logged out -->
         <button mat-flat-button color="primary" (click)="onNavigate('signup')">
           Sign Up
         </button>
 
         <button mat-flat-button color="primary" (click)="onNavigate('login')">
           Log In
+        </button>
+
+        <!-- only show this button when the user is logged in -->
+        <button mat-flat-button color="primary" (click)="onNavigate('userContent')">
+          Your Stuff
         </button>
       </section>
 
@@ -67,13 +89,6 @@
     </mat-drawer-content>
     
   </mat-drawer-container>
-
-
-  <mat-toolbar id="footer" color="primary">
-    <h1>Footer</h1>
-    
-  </mat-toolbar>
-
 
 
 </ng-container>

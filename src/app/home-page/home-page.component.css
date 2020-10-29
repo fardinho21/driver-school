@@ -24,10 +24,6 @@ section {
     justify-content: space-evenly;
 }
 
-#first div {
-    /* border: 5px solid red; */
-}
-
 #first #text{
     width: 30%;
 }

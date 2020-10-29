@@ -5,16 +5,15 @@ ng-container {
 mat-drawer-container {
     position: absolute;
     top: 125px;
-    bottom: 60px;
     left:0;
     right: 0;
     /* border: 10px solid red; */
+    bottom: 0;
+    
 }
 mat-drawer{
     width: 200px;
 }
-
-
 
 #header {
     position: fixed;
@@ -40,23 +39,6 @@ mat-drawer{
 #social button {
     margin: 1rem;
     
-}
-
-#footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    /* border: 5px solid red; */
-    z-index: 1;
-}
-
-#footer img {
-    position: absolute;
-    left:0;
-    width: 100%;
-    z-index: -1;
-    height: auto;
 }
 
 
