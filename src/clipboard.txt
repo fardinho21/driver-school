@@ -1,0 +1,36 @@
+<main>
+
+    <section>
+        <h1>Sign Up</h1>
+        <form #f="ngForm">
+            <mat-form-field>
+                <input type="text" ngModel name="fname" matInput required placeholder="First Name">
+                <mat-error >First name is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input type="text" ngModel name="lname" matInput required placeholder="Last Name">
+                <mat-error>Last name is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Your Birthdate</mat-label>
+                <input matInput ngModel name="bdate" required [max]="maxDate" [min]="minDate" [matDatepicker]="picker">
+                <mat-error>Birthdate is required</mat-error>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <div>
+                <button mat-flat-button color="primary" [disabled]="f.pristine || f.invalid">
+                    Sign Up
+                </button> 
+            </div>
+        </form>
+        
+
+
+    </section>
+
+
+</main>
