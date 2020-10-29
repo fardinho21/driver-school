@@ -8,7 +8,7 @@
     </mat-toolbar-row>
 
     <mat-toolbar-row id="header-buttons">
-      <button mat-flat-button color="accent" (click)="sidenav.toggle()">
+      <button mat-flat-button color="accent" [disabled]="inProg" (click)="sidenav.toggle()">
         <mat-icon>
           view_sidebar
         </mat-icon>
@@ -75,6 +75,12 @@
         <button *ngIf="loggedIn" mat-flat-button color="primary" (click)="onNavigate('userContent')">
           Your Stuff
         </button>
+
+        <button *ngIf="loggedIn" mat-flat-button color="primary" (click)="logOut()">
+          Logout
+        </button>
+
+        
       </section>
 
 

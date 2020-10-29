@@ -33,3 +33,7 @@ button:hover {
     background-color: rgb(254,214,0);
     color: black;
 }
+
+mat-form-field {
+    padding: 0.5rem;
+}

@@ -2,7 +2,7 @@
 
     <section>
         <h1>Log In</h1>
-        <form #f="ngForm">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
             <mat-form-field>
                 <input type="email" ngModel name="email" #em="ngModel" email required matInput  minlength="6" placeholder="Email">
                 <mat-error *ngIf="pw.hasError('required')">Email is required</mat-error>
@@ -14,7 +14,7 @@
             </mat-form-field>
 
             <div>
-                <button mat-flat-button color="primary" [disabled]="f.invalid || f.pristine">
+                <button type="submit" mat-flat-button color="primary" [disabled]="f.invalid || f.pristine">
                     Log In
                 </button> 
             </div>

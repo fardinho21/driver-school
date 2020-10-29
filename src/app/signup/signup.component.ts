@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { AuthService } from "../shared/auth.service";
 
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -17,7 +18,7 @@ export class SignupComponent implements OnInit, OnDestroy {
   next : boolean = false;
   message: string = "";
 
-  
+  private userCredentials : UserCredentials;
 
 
   constructor(private authService : AuthService) { }
@@ -27,8 +28,6 @@ export class SignupComponent implements OnInit, OnDestroy {
     this.maxDate.setFullYear(this.maxDate.getFullYear() - 14)
     this.minDate = new Date;
     this.minDate.setFullYear(this.minDate.getFullYear() - 60)
-
-
   }
 
   ngOnDestroy() {
@@ -36,11 +35,15 @@ export class SignupComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(f : NgForm) {
-    /*
-      trigger a timeout that will set flags for logged in users
-      UI will update, hiding login, signup buttons, and revealing
-      your stuff button and courses button
-    */
+    if (this.isMinor) {
+      this.userCredentials.parentFirstName = f.controls.pfirst.value,
+      this.userCredentials.parentLastName = f.controls.plast.value,
+      this.userCredentials.registeredEmail = f.controls.email.value,
+      this.userCredentials.password = f.controls.password.value
+    }
+
+    this.authService.authenticateUser("SIGNUP", this.userCredentials);
+
   }
 
   onNext(f : NgForm) {
@@ -48,6 +51,16 @@ export class SignupComponent implements OnInit, OnDestroy {
     this.isMinor = this.now.getFullYear() - this.birthDate.getFullYear() < 18;
     this.message = this.isMinor ? "Parent's email" : "Your email";
     this.next = true;
+
+    this.userCredentials = {
+      firstName : f.controls.fname.value,
+      lastName : f.controls.lname.value,
+      birthDate : f.controls.bdate.value,
+      isMinor : this.isMinor,
+      registeredEmail : "",
+      password: ""
+    }
+
   }
 
 }

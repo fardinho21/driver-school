@@ -11,7 +11,6 @@ import { OffersComponent } from "./offers/offers.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from "./material.module";
 
-
 declare global {
   export interface UserCredentials {
     firstName: string,
@@ -22,9 +21,10 @@ declare global {
     password: string,
     parentFirstName?: string,
     parentLastName?: string,
-    
   }
 }
+
+
 
 @NgModule({
   declarations: [

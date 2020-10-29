@@ -19,10 +19,20 @@ section {
 
 
 #first {
+    /* border: 10px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#content {
+    /* border: 10px solid red; */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+
 
 #first #text{
     width: 30%;
