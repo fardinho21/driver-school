@@ -15,12 +15,31 @@ mat-drawer{
     width: 200px;
 }
 
+mat-toolbar-row button p {
+    display: inline;
+}
+
 #header {
     position: fixed;
     z-index: 100;
     top: 0;
     left: 0;
     right: 0;
+    text-align: ri;
+}
+
+#footer {
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    left:0;
+    right: 0;
+}
+
+#footer div {
+    width: 100%;
+    margin: 0;
+    text-align: right;
 }
 
 #title {
@@ -29,16 +48,9 @@ mat-drawer{
     justify-content: center;
 }
 
-#header-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
 
 #social button {
     margin: 1rem;
-    
 }
 
 
@@ -56,4 +68,19 @@ mat-drawer{
 #sidenav-buttons button:hover {
     background-color: rgb(254,214,0);
     color: black;
+}
+
+
+/* @media screen and (max-width: 550px) {
+    .tealborder {
+        
+    }
+} */
+
+@media screen and (max-width: 850px) {
+    .hide-text {
+        visibility: hidden;
+        font-size: 0px;
+        height: 0px;
+    }
 }

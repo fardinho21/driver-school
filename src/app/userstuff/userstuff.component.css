@@ -1,0 +1,12 @@
+main {
+    padding: 2.0rem;
+}
+
+
+mat-tab-group, mat-tab, section, main {
+    height: 100vh;
+}
+
+#header {
+    height: 10%;
+}

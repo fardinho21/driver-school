@@ -1,1 +1,19 @@
-<p>userstuff works!</p>
+<main class="maincontent">
+    <section class="sectionstyle accentbackground flexroweven" id="header">
+        <button class="glow-g tran-05s" mat-flat-button color="primary" (click)="select('account')">Account</button>
+        <button class="glow-g tran-05s" mat-flat-button color="primary" (click)="select('purchases')">Purchases</button>
+        <button class="glow-g tran-05s" mat-flat-button color="primary" (click)="select('register')">Register</button>
+    </section>
+    <section class="sectionstyle">
+        <app-account-page *ngIf="selected==='account'">
+
+        </app-account-page>
+        <app-purchases *ngIf="selected==='purchases'">
+
+        </app-purchases>
+        <app-register *ngIf="selected==='register'">
+
+        </app-register>
+
+    </section>
+</main>

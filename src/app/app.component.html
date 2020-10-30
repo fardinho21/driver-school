@@ -7,19 +7,22 @@
       <h1>Driver school</h1>
     </mat-toolbar-row>
 
-    <mat-toolbar-row id="header-buttons">
-      <button mat-flat-button color="accent" (click)="sidenav.toggle()">
+    <mat-toolbar-row class="flexroweven yellowborder tealborder" id="header-buttons">
+      <button mat-flat-button color="accent" [disabled]="inProg" (click)="sidenav.toggle()">
         <mat-icon>
           view_sidebar
         </mat-icon>
       </button>
 
       <button mat-flat-button color="accent">
-        <mat-icon>phone</mat-icon> (555) 555-5555 
+        <mat-icon>phone</mat-icon><p class="hide-text">(555) 555-5555</p> 
       </button>
       
       <button mat-flat-button color="accent">
-        <mat-icon>assignment</mat-icon> driverschool@info.com
+        <mat-icon>assignment</mat-icon> 
+        <p class="hide-text">
+          driverschool@info.com
+        </p>
       </button>
 
       <section id="social">
@@ -43,6 +46,7 @@
         </a>   
 
       </section>
+      
     </mat-toolbar-row>
     
 
@@ -63,18 +67,24 @@
         </button>
 
         <!-- only show th e log in and sign up buttons when logged out -->
-        <button mat-flat-button color="primary" (click)="onNavigate('signup')">
+        <button *ngIf="!loggedIn" mat-flat-button color="primary" (click)="onNavigate('signup')">
           Sign Up
         </button>
 
-        <button mat-flat-button color="primary" (click)="onNavigate('login')">
+        <button *ngIf="!loggedIn" mat-flat-button color="primary" (click)="onNavigate('login')">
           Log In
         </button>
 
         <!-- only show this button when the user is logged in -->
-        <button mat-flat-button color="primary" (click)="onNavigate('userContent')">
+        <button *ngIf="loggedIn" mat-flat-button color="primary" (click)="onNavigate('userContent')">
           Your Stuff
         </button>
+
+        <button *ngIf="loggedIn" mat-flat-button color="primary" (click)="logOut()">
+          Logout
+        </button>
+
+        
       </section>
 
 
@@ -87,8 +97,16 @@
 
       </router-outlet>
     </mat-drawer-content>
+
+
     
   </mat-drawer-container>
+<!-- 
+  <mat-toolbar id="footer" color="primary">
+    <div>
+      <i class="fab fa-cc-paypal fa-2x"></i>
+    </div>
+  </mat-toolbar> -->
 
 
 </ng-container>
