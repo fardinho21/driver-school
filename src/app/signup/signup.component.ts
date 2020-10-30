@@ -39,7 +39,7 @@ export class SignupComponent implements OnInit, OnDestroy {
       this.userCredentials.parentFirstName = f.controls.pfirst.value,
       this.userCredentials.parentLastName = f.controls.plast.value,
       this.userCredentials.registeredEmail = f.controls.email.value,
-      this.userCredentials.password = f.controls.password.value
+      this.userCredentials.password = f.controls.password1.value
     }
 
     this.authService.authenticateUser("SIGNUP", this.userCredentials);

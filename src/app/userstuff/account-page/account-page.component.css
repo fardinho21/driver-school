@@ -1,10 +1,11 @@
-main {
-    border: 10px solid red;
-    height: 400px;
-    padding: 2.0rem;
+#accountinfo {
+    height: 80%;
 }
 
-section {
-    border: 10px solid purple;
+section{
+    width: 100%;
+}
+
+main, mat-card {
     height: 100%;
 }

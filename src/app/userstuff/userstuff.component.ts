@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserstuffComponent implements OnInit {
 
+  selected: string = "account";
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  select(value : string) {
+    this.selected=value;
   }
 
 }

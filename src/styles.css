@@ -42,6 +42,13 @@ body {
     padding: 1.5rem;
 }
 
+.mat-card-style {
+    background-color: rgb(33,33,33);
+    color: white;
+    transition-duration: 0.5s;
+    margin: 0.5rem;
+}
+
 .redborder {
     border: 10px solid red;
 }
@@ -62,9 +69,18 @@ body {
     transition-duration: 0.5s;
 }
 
-.glow:hover {
+.glow-y:hover {
     background-color: rgb(254,214,0);
     color: black;
+}
+
+.glow-g:hover {
+    background-color: rgb(63, 63, 63);
+    color: rgb(254,214,0);
+}
+
+.accentbackground{
+    background-color: rgb(254,214,0);
 }
 
 @media screen and (max-width: 850px) {
