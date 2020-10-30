@@ -7,7 +7,7 @@
       <h1>Driver school</h1>
     </mat-toolbar-row>
 
-    <mat-toolbar-row id="header-buttons">
+    <mat-toolbar-row class="flexroweven yellowborder tealborder" id="header-buttons">
       <button mat-flat-button color="accent" [disabled]="inProg" (click)="sidenav.toggle()">
         <mat-icon>
           view_sidebar
@@ -15,11 +15,14 @@
       </button>
 
       <button mat-flat-button color="accent">
-        <mat-icon>phone</mat-icon> (555) 555-5555 
+        <mat-icon>phone</mat-icon><p class="hide-text">(555) 555-5555</p> 
       </button>
       
       <button mat-flat-button color="accent">
-        <mat-icon>assignment</mat-icon> driverschool@info.com
+        <mat-icon>assignment</mat-icon> 
+        <p class="hide-text">
+          driverschool@info.com
+        </p>
       </button>
 
       <section id="social">
@@ -43,6 +46,7 @@
         </a>   
 
       </section>
+      
     </mat-toolbar-row>
     
 

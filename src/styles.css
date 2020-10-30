@@ -1,11 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
-html {
-    /* border: 15px solid orange; */
-    
 
-}
 html, body { height: 100%; }
 body { 
     margin: auto; font-family: Roboto, "Helvetica Neue", sans-serif;
     /* border: 10px solid lightblue;  */
+}
+
+
+.flexrowbtwn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flexroweven {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.flexcoleven {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.maincontent {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    height: 100%;
+}
+
+.sectionstyle {
+    background-color: rgb(63,63,63);
+    color:white;
+    margin: 0.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 1.5rem;
+}
+
+.redborder {
+    border: 10px solid red;
+}
+
+.greenborder {
+    border: 10px solid green;
+}
+
+.purpleborder {
+    border: 10px solid purple;
+}
+
+.orangeborder {
+    border: 10px solid orange;
+}
+
+.tran-05s {
+    transition-duration: 0.5s;
+}
+
+.glow:hover {
+    background-color: rgb(254,214,0);
+    color: black;
+}
+
+@media screen and (max-width: 850px) {
+    .fre-resp {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .fce-resp {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
 }

@@ -24,14 +24,6 @@ div {
     /* border: 10px solid red; */
     text-align: right;
 }
-button {
-    transition-duration: 0.5s;
-}
-
-button:hover {
-    background-color: rgb(254,214,0);
-    color: black;
-}
 
 mat-form-field {
     padding: 0.5rem;

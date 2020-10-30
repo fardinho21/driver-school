@@ -1,0 +1,13 @@
+main {
+    border: 10px solid red;
+    padding: 2.0rem;
+}
+
+section {
+    border: 10px solid purple;
+}
+
+
+mat-tab-group, mat-tab, section, main {
+    height: 100%;
+}

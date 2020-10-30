@@ -1,0 +1,10 @@
+main {
+    border: 10px solid red;
+    height: 400px;
+    padding: 2.0rem;
+}
+
+section {
+    border: 10px solid purple;
+    height: 100%;
+}

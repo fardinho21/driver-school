@@ -10,7 +10,7 @@ import { Subscription } from "rxjs";
 })
 export class AppComponent implements OnInit, OnDestroy{
   title = 'driver-school';
-  loggedIn: boolean = false;
+  loggedIn: boolean = true;
   inProg : boolean = false;
 
   authSubscription : Subscription;
