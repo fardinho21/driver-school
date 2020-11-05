@@ -1,1 +1,61 @@
-<p>purchases works!</p>
+<main class="flexcoleven">
+    <h1>Purchases </h1>
+
+    <div>
+        <section>
+            <mat-card class="mat-card-style">
+                <button mat-flat-button class="tran-05s glow-g" (click)="togglePage()">{{otherPage |titlecase}}</button>
+            </mat-card>
+        </section>
+    </div>
+
+    <div class="flexroweven" *ngIf="selectedPage === 'purchases'">
+        <section class="sectionstyle">
+
+            <mat-card class="mat-card-style">
+                <h3>
+                    Past Sessions
+                </h3>
+                <mat-form-field class="goldbackground">
+                    <input matInput type="text" placeholder="Filter" (keyup)="doFilter($event.target.value)">
+                </mat-form-field>
+
+                <table mat-table [dataSource]="dataSource">
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef>Name</th>
+                        <td mat-cell *matCellDef="let p"> {{p.name}} </td>
+                    </ng-container>
+    
+                    <ng-container matColumnDef="date">
+                        <th mat-header-cell *matHeaderCellDef>Date</th>
+                        <td mat-cell *matCellDef="let p"> {{p.date}} </td>
+                    </ng-container>
+    
+                    <ng-container matColumnDef="price">
+                        <th mat-header-cell *matHeaderCellDef>Price ($) </th>
+                        <td mat-cell *matCellDef="let p"> {{p.price}} </td>
+                    </ng-container>
+    
+                    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                    <tr class="tran-05s glow-y" mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+                </table>
+    
+                <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+            </mat-card>
+        </section>
+    
+        <section class="sectionstyle">
+            <mat-card class="mat-card-style">
+                <h3>
+                    Upcoming Sessions
+                </h3>
+    
+            </mat-card>
+        </section>
+    </div>
+
+
+    <div class="flexroweven" *ngIf="selectedPage === 'materials'"></div>
+
+
+</main>

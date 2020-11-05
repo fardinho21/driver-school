@@ -26,6 +26,13 @@ declare global {
     parentFirstName?: string,
     parentLastName?: string,
   }
+
+  export interface SessionElement {
+    name: string;
+    date: string;
+    price: number;
+    type: string;
+  }
 }
 
 

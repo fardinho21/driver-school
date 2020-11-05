@@ -1,0 +1,32 @@
+main {
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    height: 100%;
+}
+
+section {
+    width: 100%;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+table{
+    width: 100%;
+}
+
+#panel {
+    width: 30%;
+}
+
+#panel mat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+mat-card {
+    box-sizing: border-box;
+    height: 100%;
+}

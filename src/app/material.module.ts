@@ -8,6 +8,8 @@ import { MatNativeDateModule } from "@angular/material/core";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatCardModule } from "@angular/material/card";
 import { MatTabsModule } from "@angular/material/tabs";
+import { MatTableModule } from "@angular/material/table";
+import { MatPaginatorModule } from "@angular/material/paginator";
 
 @NgModule({
     imports: [
@@ -19,7 +21,9 @@ import { MatTabsModule } from "@angular/material/tabs";
         MatNativeDateModule,
         MatToolbarModule,
         MatCardModule,
-        MatTabsModule
+        MatTabsModule,
+        MatTableModule,
+        MatPaginatorModule
     ],
     exports: [
         MatSidenavModule,
@@ -30,7 +34,9 @@ import { MatTabsModule } from "@angular/material/tabs";
         MatNativeDateModule,
         MatToolbarModule,
         MatCardModule,
-        MatTabsModule
+        MatTabsModule,
+        MatTableModule,
+        MatPaginatorModule
     ]
 })
 export class MaterialModule {

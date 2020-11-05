@@ -1,0 +1,31 @@
+main {
+    border: 1px solid green;
+    box-sizing: border-box;
+}
+
+section {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+
+table {
+    width: 100%;
+}
+
+
+mat-card {
+    text-align: center;
+}
+
+mat-form-field{
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+div {
+    border: 1px solid blue;
+}
+
+

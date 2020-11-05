@@ -1,1 +1,48 @@
-<p>register works!</p>
+<main>
+
+    <section class="flexcoleven" id="panel">
+        <mat-card class="mat-card-style" >
+            <button class="tran-05s glow-g" mat-flat-button (click)="setDataSource('sessionOne')"> Session 1</button>
+            <button class="tran-05s glow-g" mat-flat-button (click)="setDataSource('sessionTwo')"> Session 2</button>
+            <button class="tran-05s glow-g" mat-flat-button (click)="setDataSource('driverTests')"> Driver Test</button>
+
+        </mat-card>
+    </section>
+
+
+    <section class="flexcoleven">
+
+        <h1>
+            Register for a session or driver test
+        </h1>
+
+        <mat-card class="mat-card-style">
+            <table mat-table [dataSource]="dataSource">
+
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef>Instructor</th>
+                    <td mat-cell *matCellDef="let p">{{p.name}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef>Date</th>
+                    <td mat-cell *matCellDef="let p">{{p.date}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef>Price ($)</th>
+                    <td mat-cell *matCellDef="let p">{{p.price}}</td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="columnsToDisplay">
+                </tr>
+                <tr class="tran-05s glow-y" mat-row *matRowDef="let row; columns: columnsToDisplay">
+                </tr>
+
+                <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+            </table>
+        </mat-card>
+    </section>
+
+
+</main>
