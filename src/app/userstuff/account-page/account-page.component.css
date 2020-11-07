@@ -1,11 +1,13 @@
-#accountinfo {
-    height: 80%;
-}
-
 section{
     width: 100%;
 }
 
 main, mat-card {
-    height: 100%;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: underline;
+    display: block;
+    width: fit-content;
 }

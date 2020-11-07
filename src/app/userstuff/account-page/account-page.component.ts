@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UiManagerService } from "../../shared/ui-manager.service";
 
 @Component({
   selector: 'app-account-page',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private uiManager: UiManagerService ) { }
 
   ngOnInit(): void {
+  }
+
+  onLinkClick(n:number) {
+    this.uiManager.showDialog(n);
   }
 
 }

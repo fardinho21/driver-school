@@ -12,6 +12,7 @@ import { UserstuffComponent } from "./userstuff/userstuff.component";
 import { RegisterComponent } from "./userstuff/register/register.component";
 import { PurchasesComponent } from "./userstuff/purchases/purchases.component";
 import { AccountPageComponent } from "./userstuff/account-page/account-page.component";
+import { DialogComponent } from "./shared/dialog/dialog.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from "./material.module";
 
@@ -35,8 +36,6 @@ declare global {
   }
 }
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +46,8 @@ declare global {
     UserstuffComponent,
     AccountPageComponent,
     RegisterComponent,
-    PurchasesComponent
+    PurchasesComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,

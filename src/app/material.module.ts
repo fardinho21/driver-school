@@ -10,6 +10,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import { MatPaginatorModule } from "@angular/material/paginator";
         MatCardModule,
         MatTabsModule,
         MatTableModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatDialogModule
     ],
     exports: [
         MatSidenavModule,
@@ -36,7 +38,11 @@ import { MatPaginatorModule } from "@angular/material/paginator";
         MatCardModule,
         MatTabsModule,
         MatTableModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatDialogModule
+    ],
+    providers: [
+        {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}
     ]
 })
 export class MaterialModule {
