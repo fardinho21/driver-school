@@ -1,15 +1,56 @@
-<h1 mat-dialog-title>Hello</h1>
+<h1 mat-dialog-title>{{headerMessage | cameltospace | titlecase}}</h1>
 <div mat-dialog-content>
-    <ng-container #container></ng-container>
+    <ng-container  #container></ng-container>
 </div>
 
 
 <ng-template #changeEmail>
-    <p>Change Email works</p>
+    <form class="flexcoleven"  #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <mat-form-field>
+            <input matInput type="email" ngModel name="email" #em="ngModel" email required minlength="6" placeholder="New Email">
+            <mat-error *ngIf="em.hasError('required')">Email is required</mat-error>
+            <mat-error *ngIf="em.hasError('minlength')">Email must be at least 6 characters long</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="password" ngModel name="password" #pw="ngModel" password required matInput minlength="6" placeholder="Password">
+            <mat-error *ngIf="pw.hasError('required')">Password is required</mat-error>
+            <mat-error *ngIf="pw.hasError('minlength')">Password must be at least 6 characters long</mat-error>
+        </mat-form-field>
+        <section id="buttons">
+            <button mat-flat-button color="primary" class="tran-05s glow-y" [disabled]="f.invalid || f.pristine"> Confirm</button>
+        </section>
+    </form>
+
 </ng-template>
 
 <ng-template #changePassword>
-    <p>Change Password works</p>
+    <form class="flexcoleven"  #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <mat-form-field>
+            <input type="password" ngModel #p1="ngModel" name="password1" matInput required password minlength="6" placeholder="New Password">
+            <mat-error *ngIf="p1.hasError('required')">Password is required</mat-error>
+            <mat-error *ngIf="p1.hasError('minlength')">Password must be at least 6 characters long</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="password" ngModel #p2="ngModel" name="password2" matInput required password minlength="6" placeholder="Confirm Password">
+            <mat-error *ngIf="p1.control.value != p2.control.value || p2.hasError('required')">Passwords must match</mat-error>
+        </mat-form-field>
+        <section id="buttons">
+            <button mat-flat-button color="primary" class="tran-05s glow-y" [disabled]="f.invalid || f.pristine"> Confirm</button>
+        </section>
+    </form>
+</ng-template>
+
+<ng-template #changePhone>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <mat-form-field>
+            <input type="text" ngModel matInput name="phone" #pn="ngModel" required pattern="^[2-9]\d{2}-\d{3}-\d{4}$" placeholder="###-###-####">
+            <mat-error *ngIf="pn.hasError('pattern')">Entry must follow ###-###-####</mat-error>
+            <mat-error *ngIf="pn.hasError('required')">Phone number is required</mat-error>
+        </mat-form-field>
+        <section id="buttons">
+            <button mat-flat-button color="primary" class="tran-05s glow-y" [disabled]="f.invalid || f.pristine"> Confirm</button>
+        </section>
+    </form>
 </ng-template>
 
 <ng-template #deleteAccount>
@@ -19,4 +60,9 @@
 <ng-template #shareLink>
     <p>Share Link works</p>
 </ng-template>
+
+<ng-template #linkPaypal>
+ <p>Link paypal works</p>
+</ng-template>
+
 

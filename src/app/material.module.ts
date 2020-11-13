@@ -10,6 +10,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
         MatTabsModule,
         MatTableModule,
         MatPaginatorModule,
-        MatDialogModule
+        MatDialogModule,
+        MatCheckboxModule
     ],
     exports: [
         MatSidenavModule,
@@ -39,7 +41,8 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
         MatTabsModule,
         MatTableModule,
         MatPaginatorModule,
-        MatDialogModule
+        MatDialogModule,
+        MatCheckboxModule
     ],
     providers: [
         {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}

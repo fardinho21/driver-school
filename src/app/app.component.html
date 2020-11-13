@@ -76,8 +76,8 @@
         </button>
 
         <!-- only show this button when the user is logged in -->
-        <button *ngIf="loggedIn" mat-flat-button color="primary" (click)="onNavigate('userContent')">
-          Your Stuff
+        <button id="dashboard" *ngIf="loggedIn" mat-flat-button color="primary" (click)="onNavigate('userContent')">
+          Student Dashboard
         </button>
 
         <button *ngIf="loggedIn" mat-flat-button color="primary" (click)="logOut()">

@@ -20,11 +20,6 @@ form {
     padding: 2rem;
 }
 
-div {
-    /* border: 10px solid red; */
-    text-align: right;
-}
-
 mat-form-field {
     padding: 0.5rem;
 }

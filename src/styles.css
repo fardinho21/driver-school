@@ -84,6 +84,10 @@ body {
     color: rgb(254,214,0);
 }
 
+.tblr:hover {
+    cursor: pointer;
+}
+
 .linkglow-y:hover{
     color: rgb(254,214,0);
     cursor: pointer;

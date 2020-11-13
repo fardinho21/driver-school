@@ -15,7 +15,8 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(f : NgForm) {
-    this.authService.logIn("","")
+    const asInstructor : boolean = f.controls['asInstructor'].value
+    this.authService.logIn("","",asInstructor)
   }
 
 }

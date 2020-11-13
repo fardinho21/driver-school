@@ -13,8 +13,8 @@ export class AccountPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onLinkClick(n:number) {
-    this.uiManager.showDialog(n);
+  onLinkClick(s:string) {
+    this.uiManager.showDialog(s);
   }
 
 }

@@ -20,7 +20,7 @@
                 <br>
                 Phone: (555) 555-5555
                 <br>
-                <a class="linkglow-y" (click)="onLinkClick(5)">Link Paypal account</a>
+                <a class="linkglow-y" (click)="onLinkClick('linkPaypal')">Link Paypal account</a>
             </p>
         </mat-card>
     </section>
@@ -28,9 +28,10 @@
     <section class="flexcoleven">
         <mat-card class="mat-card-style">
             <h1>Settings</h1>
-            <a class="linkglow-y" (click)="onLinkClick(1)">Change email address</a>
-            <a class="linkglow-y" (click)="onLinkClick(2)">Change password</a>
-            <a class="linkglow-y" (click)="onLinkClick(3)">Delete account</a>
+            <a class="linkglow-y" (click)="onLinkClick('changeEmail')">Change email address</a>
+            <a class="linkglow-y" (click)="onLinkClick('changePassword')">Change password</a>
+            <a class="linkglow-y" (click)="onLinkClick('deleteAccount')">Delete account</a>
+            <a class="linkglow-y" (click)="onLinkClick('changePhone')"> Change phone number</a>
 
         </mat-card>
         <mat-card class="mat-card-style">
@@ -38,7 +39,7 @@
             <p>
                 Referral link: (link goes here)
                 <br>
-                <a class="linkglow-y" (click)="onLinkClick(4)">Share</a>
+                <a class="linkglow-y" (click)="onLinkClick('shareLink')">Share</a>
                 Join as instructor
             </p>
         </mat-card>

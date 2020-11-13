@@ -115,7 +115,7 @@ export class PurchasesComponent implements OnInit, AfterViewInit {
     }
   ]
 
-  selectedPage : string = "purchases";
+  selectedPage : string = "sessions";
   otherPage : string = "materials"
   @ViewChild(MatPaginator) paginator: MatPaginator;
   dataSource = new MatTableDataSource<SessionElement>(this.purchases);
@@ -135,11 +135,14 @@ export class PurchasesComponent implements OnInit, AfterViewInit {
   }
 
   togglePage() {
-    if (this.selectedPage === "purchases" ) {
+
+    //change data source for table
+
+    if (this.selectedPage === "sessions" ) {
       this.selectedPage = "materials"
-      this.otherPage = "purchases"
+      this.otherPage = "sessions"
     } else  {
-      this.selectedPage = "purchases"
+      this.selectedPage = "sessions"
       this.otherPage = "materials"
     }
   }

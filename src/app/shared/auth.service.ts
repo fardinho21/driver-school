@@ -18,8 +18,6 @@ export class AuthService {
 
         this.userCredentials = userCredentials;
 
-        
-        
         switch(mode) {
             case "LOGIN":
                 this.logIn("","")
@@ -36,7 +34,7 @@ export class AuthService {
 
     }
 
-    logIn(emai: string, password: string) {
+    logIn(email: string, password: string, instructor : boolean=false) {
         this.authSubject.next("inprogress")
         setTimeout(() => {
             this.authSubject.next("authed");

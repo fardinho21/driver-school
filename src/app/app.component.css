@@ -70,6 +70,12 @@ mat-toolbar-row button p {
     color: black;
 }
 
+#dashboard {
+    white-space: normal;
+    padding: 0rem;
+}
+
+
 
 /* @media screen and (max-width: 550px) {
     .tealborder {
