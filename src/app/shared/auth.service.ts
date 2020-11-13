@@ -6,7 +6,7 @@ import { Subject } from "rxjs";
 })
 export class AuthService {
 
-    authSubject  = new Subject<string>();
+    authSubject  = new Subject<{msg:string,ins?:boolean}>();
     private userCredentials : UserCredentials;
 
     constructor() {
@@ -35,23 +35,23 @@ export class AuthService {
     }
 
     logIn(email: string, password: string, instructor : boolean=false) {
-        this.authSubject.next("inprogress")
+        this.authSubject.next({msg:'inprogress'})
         setTimeout(() => {
-            this.authSubject.next("authed");
+            this.authSubject.next({msg:'authed',ins:instructor});
         }, 1500)
     }
     
-    logOut() {
-        this.authSubject.next("inprogress")
+    logOut(instructor: boolean=false) {
+        this.authSubject.next({msg:'inprogress'})
         setTimeout(() => {
-            this.authSubject.next("logout");
+            this.authSubject.next({msg:'logout',ins:instructor});
         }, 1500)
     }
 
     signUp(userCredentials: UserCredentials) {
-        this.authSubject.next("inprogress")
+        this.authSubject.next({msg:'inprogress'})
         setTimeout(() => {
-            this.authSubject.next("authed");
+            this.authSubject.next({msg:'authed'});
         }, 1500)
     }
 

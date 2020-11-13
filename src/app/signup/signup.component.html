@@ -48,20 +48,20 @@
             </mat-form-field>
 
             <mat-form-field>
-                <input formControlName="password1" type="password" matInput  password minlength="6" placeholder="Password">
+                <input formControlName="password1" type="password" matInput placeholder="Password">
                 <mat-error >Password is required</mat-error>
                 <mat-error >Password must be at least 6 characters long</mat-error>
             </mat-form-field>
             
 
             <mat-form-field>
-                <input type="password2" matInput  password minlength="6" placeholder="Confirm Password">
-                <mat-error >Passwords must match</mat-error>
+                <input formControlName="password2" matInput type="password" placeholder="Confirm Password" [errorStateMatcher]="matcher">
+                <mat-error *ngIf="signupForm2.hasError('mismatch')">Passwords must match</mat-error>
             </mat-form-field>
 
             <div>
                 <button type="button" mat-flat-button color="accent" (click)="onBack()">Back</button> |
-                <button type="submit" mat-flat-button color="primary">
+                <button type="submit" mat-flat-button color="primary" [disabled]="signupForm2.errors || signupForm2.pristine">
                     Sign Up
                 </button> 
             </div>

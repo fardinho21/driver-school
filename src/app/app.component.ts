@@ -17,6 +17,7 @@ export class AppComponent implements OnInit, OnDestroy{
   title = 'driver-school';
   loggedIn: boolean = true;
   inProg : boolean = false;
+  private isInstructor : boolean = false;
 
 
   constructor(private rotuer: Router, private authService: AuthService) {
@@ -24,14 +25,15 @@ export class AppComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit() {
-    this.authService.authSubject.subscribe((isAuthed : string )=> {
-      this.loggedIn = isAuthed === "authed" ? true : false;
-      this.inProg = isAuthed === "inprogress" ? true : false;
+    this.authService.authSubject.subscribe((isAuthed : {msg:string,ins?:boolean} )=> {
+      this.loggedIn = isAuthed.msg === "authed" ? true : false;
+      this.inProg = isAuthed.msg === "inprogress" ? true : false;
+      this.isInstructor = isAuthed.ins
       this.sidenav.close();
 
-      if (isAuthed === "authed") {
+      if (isAuthed.msg === "authed") {
         this.onNavigate("userContent")
-      } else if (isAuthed === "logout") {
+      } else if (isAuthed.msg === "logout") {
         this.onNavigate("home")
       }
     })

@@ -1,8 +1,7 @@
 import { Component, Input, OnDestroy, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from "@angular/forms";
-import { isThisSecond } from 'date-fns';
 import { AuthService } from "../shared/auth.service";
-
+import { MyErrorStateMatcher } from "../shared/error-matcher"
 
 @Component({
   selector: 'app-signup',
@@ -22,6 +21,8 @@ export class SignupComponent implements OnInit, OnDestroy {
   signupForm1 : FormGroup;
   signupForm2 : FormGroup;
 
+  matcher = new MyErrorStateMatcher();
+
   private userCredentials : UserCredentials;
 
 
@@ -34,16 +35,15 @@ export class SignupComponent implements OnInit, OnDestroy {
       lastname: [null, Validators.required],
       birthday: [null, Validators.required]
     });
-    this.signupForm2 = this.fb.group({
-      parentfirst: [null, Validators.required],
-      parentlast: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]],
-      password1: [null, [Validators.required, Validators.minLength(6)]],
-      password2: [null, [Validators.required, Validators.minLength(6)]]
 
-    }, {
-      validator: this.mustMatch('password1','password2')
-    })
+    this.signupForm2 = this.fb.group({
+        parentfirst: [null, Validators.required],
+        parentlast: [null, Validators.required],
+        email: [null, [Validators.required, Validators.email]],
+        password1: [null, [Validators.required, Validators.minLength(6)]],
+        password2: [null]
+      }, { validator: this.mustMatch }
+    );
 
     this.maxDate = new Date();
     this.maxDate.setFullYear(this.maxDate.getFullYear() - 14)
@@ -56,9 +56,6 @@ export class SignupComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-
-    
-
     if (this.isMinor) {
       this.userCredentials.parentFirstName = this.signupForm2.controls.parentfirst.value;
       this.userCredentials.parentLastName = this.signupForm2.controls.parentlast.value;
@@ -73,9 +70,6 @@ export class SignupComponent implements OnInit, OnDestroy {
   }
 
   onNext() {
-
-    
-
     const birthdate : Date = this.signupForm1.controls.birthday.value;
     this.isMinor = this.now.getFullYear() - birthdate.getFullYear() < 18;
     this.message = this.isMinor ? "Parent's email" : "Your email";
@@ -103,19 +97,16 @@ export class SignupComponent implements OnInit, OnDestroy {
     
   }
 
-  mustMatch(password1: string, password2: string) : {[s:string]:boolean} {
-    try {
-      const p1 = this.signupForm2.controls[password1].value
-      const p2 = this.signupForm2.controls[password2].value
-      if (p1.value == p2.value) {
-        return null;
-      } 
-      return {'mismatch':true};
-    } catch (err) {
-      console.log(err)
+  mustMatch(group: FormGroup)  {
+    const p1 = group.get('password1')
+    const p2 = group.get('password2')
+
+    if(p1.value === p2.value) {
+      p2.setErrors(null)
+      return null;
+    } else if (p1.value !== p2.value){
+      return {mismatch:true}
     }
-
-
   }
 
 }
