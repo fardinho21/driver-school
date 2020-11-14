@@ -8,7 +8,7 @@ import { UiManagerService } from "../../shared/ui-manager.service";
 })
 export class AccountPageComponent implements OnInit {
 
-  constructor(private uiManager: UiManagerService ) { }
+  constructor(public uiManager: UiManagerService ) { }
 
   ngOnInit(): void {
   }

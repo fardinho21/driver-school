@@ -17,7 +17,7 @@ export class AppComponent implements OnInit, OnDestroy{
   title = 'driver-school';
   loggedIn: boolean = true;
   inProg : boolean = false;
-  private isInstructor : boolean = false;
+  accountType : string = "student";
 
 
   constructor(private rotuer: Router, private authService: AuthService) {
@@ -28,7 +28,8 @@ export class AppComponent implements OnInit, OnDestroy{
     this.authService.authSubject.subscribe((isAuthed : {msg:string,ins?:boolean} )=> {
       this.loggedIn = isAuthed.msg === "authed" ? true : false;
       this.inProg = isAuthed.msg === "inprogress" ? true : false;
-      this.isInstructor = isAuthed.ins
+      this.accountType = isAuthed.ins ? "instructor" : "student";
+      
       this.sidenav.close();
 
       if (isAuthed.msg === "authed") {

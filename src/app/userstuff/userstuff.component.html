@@ -1,19 +1,35 @@
 <main class="maincontent">
     <section class="sectionstyle accentbackground flexroweven" id="header">
         <button class="glow-g tran-05s" mat-flat-button color="primary" (click)="select('account')">Account</button>
-        <button class="glow-g tran-05s" mat-flat-button color="primary" (click)="select('purchases')">Purchases</button>
-        <button class="glow-g tran-05s" mat-flat-button color="primary" (click)="select('register')">Register</button>
+        <button class="glow-g tran-05s" mat-flat-button color="primary" (click)="select('schedule')">Schedule</button>
+        <ng-container *ngIf="uiManager.accountType === 'student'">
+            <button class="glow-g tran-05s" mat-flat-button color="primary" (click)="select('register')">Register</button>
+        </ng-container>
+        <ng-container *ngIf="uiManager.accountType === 'instructor'">
+            <button class="glow-g tran-05s" mat-flat-button color="primary" (click)="select('students')">Students</button>
+            <button class="glow-g tran-05s" mat-flat-button color="primary" (click)="select('materials')">Materials</button>                  
+        </ng-container>
+
     </section>
     <section class="sectionstyle">
         <app-account-page *ngIf="selected==='account'">
 
         </app-account-page>
-        <app-purchases *ngIf="selected==='purchases'">
 
-        </app-purchases>
-        <app-register *ngIf="selected==='register'">
+        <ng-container *ngIf="uiManager.accountType === 'student'">
 
-        </app-register>
+            <app-schedule *ngIf="selected==='purchases'">
+
+            </app-schedule>
+            <app-register *ngIf="selected==='register'">
+
+            </app-register>
+        </ng-container>
+
+        <ng-container *ngIf="uiManager.accountType === 'instructor'">
+
+        </ng-container>
+
 
     </section>
 </main>

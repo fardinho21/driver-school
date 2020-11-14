@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
+import { UiManagerService } from './ui-manager.service';
 
 @Injectable({
     providedIn: "root"
@@ -9,7 +10,7 @@ export class AuthService {
     authSubject  = new Subject<{msg:string,ins?:boolean}>();
     private userCredentials : UserCredentials;
 
-    constructor() {
+    constructor(private uiManager : UiManagerService) {
         
     }
 
@@ -35,6 +36,9 @@ export class AuthService {
     }
 
     logIn(email: string, password: string, instructor : boolean=false) {
+        this.uiManager.setAccountType(instructor);
+        //this.uiManager.setIsMinor(this.userCredentials.isMinor);
+        this.uiManager.setIsMinor(false);
         this.authSubject.next({msg:'inprogress'})
         setTimeout(() => {
             this.authSubject.next({msg:'authed',ins:instructor});

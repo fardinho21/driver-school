@@ -3,13 +3,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-purchases',
-  templateUrl: './purchases.component.html',
-  styleUrls: ['./purchases.component.css']
+  selector: 'app-schedule',
+  templateUrl: './schedule.component.html',
+  styleUrls: ['./schedule.component.css']
 })
-export class PurchasesComponent implements OnInit, AfterViewInit {
+export class ScheduleComponent implements OnInit, AfterViewInit {
 
-  purchases : SessionElement[] = 
+  schedule : SessionElement[] = 
   [
     {
       "name": "Rosalie",
@@ -118,7 +118,7 @@ export class PurchasesComponent implements OnInit, AfterViewInit {
   selectedPage : string = "sessions";
   otherPage : string = "materials"
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  dataSource = new MatTableDataSource<SessionElement>(this.purchases);
+  dataSource = new MatTableDataSource<SessionElement>(this.schedule);
   columnsToDisplay = ["name", "date", "price"]
 
   constructor() { }

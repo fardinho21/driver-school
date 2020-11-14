@@ -2,7 +2,7 @@
     <section id="accountinfo">
         <mat-card class="mat-card-style">
             <h1>Account Info</h1>
-            <h3>Student Info</h3>
+            <h3>{{ uiManager.accountType | titlecase }} Info</h3>
             <p>
                 Name: John Smith
                 <br>
@@ -12,16 +12,19 @@
                 <br>
                 Paypal: link account
             </p>
-            <h3>Parent Info</h3>
-            <p>
-                Name: John Smith
-                <br>
-                Email: johnsmith@info.com (verified)
-                <br>
-                Phone: (555) 555-5555
-                <br>
-                <a class="linkglow-y" (click)="onLinkClick('linkPaypal')">Link Paypal account</a>
-            </p>
+            <ng-container *ngIf="uiManager.accountType === 'student' && uiManager.isMinor">
+                <h3>Parent Info</h3>
+                <p>
+                    Name: John Smith
+                    <br>
+                    Email: johnsmith@info.com (verified)
+                    <br>
+                    Phone: (555) 555-5555
+                    <br>
+                    <a class="linkglow-y" (click)="onLinkClick('linkPaypal')">Link Paypal account</a>
+                </p>
+            </ng-container>
+
         </mat-card>
     </section>
 
