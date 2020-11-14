@@ -7,7 +7,7 @@
         </ng-container>
         <ng-container *ngIf="uiManager.accountType === 'instructor'">
             <button class="glow-g tran-05s" mat-flat-button color="primary" (click)="select('students')">Students</button>
-            <button class="glow-g tran-05s" mat-flat-button color="primary" (click)="select('materials')">Materials</button>                  
+            <button class="glow-g tran-05s" mat-flat-button color="primary" (click)="select('content')">Content</button>                  
         </ng-container>
 
     </section>
@@ -15,19 +15,17 @@
         <app-account-page *ngIf="selected==='account'">
 
         </app-account-page>
+        <app-schedule *ngIf="selected==='schedule'">
+        </app-schedule>
 
         <ng-container *ngIf="uiManager.accountType === 'student'">
-
-            <app-schedule *ngIf="selected==='purchases'">
-
-            </app-schedule>
             <app-register *ngIf="selected==='register'">
 
             </app-register>
         </ng-container>
 
         <ng-container *ngIf="uiManager.accountType === 'instructor'">
-
+            <!-- material page for  -->
         </ng-container>
 
 

@@ -10,6 +10,8 @@ import { OffersComponent } from "./offers/offers.component";
 import { UserstuffComponent } from "./userstuff/userstuff.component";
 import { RegisterComponent } from "./userstuff/register/register.component";
 import { ScheduleComponent } from "./userstuff/schedule/schedule.component";
+import { StudentRegistryComponent } from "./userstuff/student-registry/student-registry.component";
+import { CourseContentComponent } from "./userstuff/course-content/course-content.component";
 import { AccountPageComponent } from "./userstuff/account-page/account-page.component";
 import { DialogComponent } from "./shared/dialog/dialog.component";
 import { CamelToSpacePipe } from "./shared/pipes/camel-to-space.pipe";
@@ -48,6 +50,8 @@ declare global {
     RegisterComponent,
     ScheduleComponent,
     DialogComponent,
+    CourseContentComponent,
+    StudentRegistryComponent,
     CamelToSpacePipe
   ],
   imports: [

@@ -24,10 +24,6 @@ mat-form-field{
     box-sizing: border-box;
 }
 
-div {
-    /* border: 1px solid blue; */
-}
-
 #preview {
     height: 400px;
 }

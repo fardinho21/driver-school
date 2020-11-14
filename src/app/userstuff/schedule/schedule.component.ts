@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { UiManagerService } from "../../shared/ui-manager.service";
 
 @Component({
   selector: 'app-schedule',
@@ -121,7 +122,7 @@ export class ScheduleComponent implements OnInit, AfterViewInit {
   dataSource = new MatTableDataSource<SessionElement>(this.schedule);
   columnsToDisplay = ["name", "date", "price"]
 
-  constructor() { }
+  constructor(public uiManager: UiManagerService) { }
 
   ngOnInit(): void {
   }

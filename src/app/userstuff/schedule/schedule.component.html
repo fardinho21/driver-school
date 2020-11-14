@@ -1,18 +1,17 @@
 <main class="flexcoleven">
     <h1> Schedule </h1>
 
-    <div>
+    <ng-container *ngIf="uiManager.accountType === 'student'">
         <section>
             <mat-card class="mat-card-style">
                 <button mat-flat-button class="tran-05s glow-g" (click)="togglePage()">{{otherPage |titlecase}}</button>
             </mat-card>
-        </section>
-    </div>
+        </section>        
+    </ng-container>
 
     <ng-container>
         <div class="flexroweven">
             <section>
-
                 <mat-card class="mat-card-style">
                     <h3>
                         {{selectedPage | titlecase}}
@@ -47,17 +46,23 @@
 
             <section>
                 <mat-card class="mat-card-style">
-                    <h3 *ngIf="selectedPage === 'sessions'">Upcoming Sessions</h3>
-                    <h3 *ngIf="selectedPage === 'materials'">Document Preview</h3>
+                    <ng-container *ngIf="uiManager.accountType === 'student'">
+                        <h3 *ngIf="selectedPage === 'sessions'">Upcoming Sessions</h3>
+                        <h3 *ngIf="selectedPage === 'materials'">Document Preview</h3>
+                        <div *ngIf="selectedPage === 'materials'" id="preview" class="flexcoleven">
+                            <p>No document selected</p>
+                        </div>
+                    </ng-container>
 
-                    <div *ngIf="selectedPage === 'materials'" id="preview" class="flexcoleven">
-                        <p>No document selected</p>
-                    </div>
+                    <ng-container *ngIf="uiManager.accountType === 'instructor'">
+                        <!-- form for creating new session -->
+                    </ng-container>
+
+
 
                 </mat-card>
             </section>
         </div>
     </ng-container>
-
 
 </main>
