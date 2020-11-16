@@ -9,9 +9,6 @@ section {
     /* border: 1px solid red; */
 }
 
-table {
-    width: 100%;
-}
 
 
 mat-card {
@@ -27,4 +24,10 @@ mat-form-field{
 #preview {
     height: 400px;
 }
+
+table {
+    width: 100%;
+    text-align: left;
+}
+
 

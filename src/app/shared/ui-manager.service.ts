@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DialogComponent } from "./dialog/dialog.component";
 
 @Injectable({
@@ -7,16 +7,25 @@ import { DialogComponent } from "./dialog/dialog.component";
 })
 export class UiManagerService {
 
-  accountType: string="student";
+  accountType: string="instructor";
   isMinor: boolean=false;
+  dialogRef : MatDialogRef<DialogComponent>;
 
   constructor(public dialog: MatDialog) { }
 
 
-  showDialog(s:string) {
+  showDialog(s:string, data?: any) {
     if (s) {
-      const dialogRef = this.dialog.open(DialogComponent,{data:{display:s}})
+      if (data) {
+        this.dialogRef = this.dialog.open(DialogComponent,{data:{display:s,extra:data}})
+      } else {
+        this.dialogRef = this.dialog.open(DialogComponent,{data:{display:s}})
+      }
     }
+  }
+
+  closeDialog() {
+    this.dialogRef.close();
   }
 
   setAccountType(instructor: boolean){

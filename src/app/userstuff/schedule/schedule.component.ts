@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { FormGroup, FormBuilder} from "@angular/forms";
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { UiManagerService } from "../../shared/ui-manager.service";
@@ -120,9 +121,10 @@ export class ScheduleComponent implements OnInit, AfterViewInit {
   otherPage : string = "materials"
   @ViewChild(MatPaginator) paginator: MatPaginator;
   dataSource = new MatTableDataSource<SessionElement>(this.schedule);
-  columnsToDisplay = ["name", "date", "price"]
+  columnsToDisplay = ["name", "date", "price"];
+  createSession : FormBuilder
 
-  constructor(public uiManager: UiManagerService) { }
+  constructor(public uiManager: UiManagerService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }

@@ -77,11 +77,13 @@ body {
 .glow-y:hover {
     background-color: rgb(254,214,0);
     color: black;
+    cursor: pointer;
 }
 
 .glow-g:hover {
     background-color: rgb(63, 63, 63);
     color: rgb(254,214,0);
+    cursor: pointer;
 }
 
 .tblr:hover {

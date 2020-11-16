@@ -40,6 +40,7 @@ export class SignupComponent implements OnInit, OnDestroy {
         parentfirst: [null, Validators.required],
         parentlast: [null, Validators.required],
         email: [null, [Validators.required, Validators.email]],
+        phone: [null, [Validators.required, Validators.pattern('([1-9]{3}-){2}([1-9]{4})')]],
         password1: [null, [Validators.required, Validators.minLength(6)]],
         password2: [null]
       }, { validator: this.mustMatch }
@@ -63,6 +64,7 @@ export class SignupComponent implements OnInit, OnDestroy {
 
     this.userCredentials.registeredEmail = this.signupForm2.controls.email.value;
     this.userCredentials.password = this.signupForm2.controls.password.value;
+    this.userCredentials.phoneNumber = this.signupForm2.controls.phoneNumber.value;
     this.authService.authenticateUser("SIGNUP", this.userCredentials);
 
     console.log(this.userCredentials)
@@ -78,6 +80,7 @@ export class SignupComponent implements OnInit, OnDestroy {
     this.userCredentials = {
       firstName : this.signupForm1.controls.firstname.value,
       lastName : this.signupForm1.controls.lastname.value,
+      phoneNumber: "###-###-####",
       birthDate : birthdate,
       isMinor : this.isMinor,
       registeredEmail : "",

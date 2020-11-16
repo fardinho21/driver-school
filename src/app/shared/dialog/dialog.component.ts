@@ -12,7 +12,6 @@ export class DialogComponent implements OnInit, AfterViewInit{
 
 
   headerMessage : string;
-
   @ViewChild("container",{read: ViewContainerRef, static: false}) ctr: ViewContainerRef;
   @ViewChild("changeEmail",{read: TemplateRef, static: false}) changeEmailTmpl : TemplateRef<any>;
   @ViewChild("changePassword",{read: TemplateRef, static: false}) changePassTmpl : TemplateRef<any>;
@@ -20,12 +19,15 @@ export class DialogComponent implements OnInit, AfterViewInit{
   @ViewChild("changePhone",{read: TemplateRef, static: false}) changePhoneTmpl : TemplateRef<any>;
   @ViewChild("shareLink",{read: TemplateRef, static: false}) shareLinkTmpl : TemplateRef<any>;
   @ViewChild("linkPaypal",{read: TemplateRef, static: false}) linkPaypalTmpl : TemplateRef<any>;
+  @ViewChild("studentInfo", {read: TemplateRef, static: false}) clickStudentTmpl : TemplateRef<any>;
   view : EmbeddedViewRef<any>;
 
   constructor(
-    public dialogRef: MatDialogRef<DialogComponent>, 
-    @Inject(MAT_DIALOG_DATA) public data : {display:string}, 
-    private chgDetectRef: ChangeDetectorRef) { }
+    public dialogRef: MatDialogRef<DialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data : {display:string, extra?: any}, 
+    private chgDetectRef: ChangeDetectorRef) { 
+
+    }
 
   ngOnInit(): void {
     
@@ -46,7 +48,9 @@ export class DialogComponent implements OnInit, AfterViewInit{
         this.view = this.changePhoneTmpl.createEmbeddedView(null)
       } else if (this.data.display==="linkPaypal") {
         this.view = this.linkPaypalTmpl.createEmbeddedView(null)
-      } 
+      } else if (this.data.display==="studentInfo") {
+        this.view = this.clickStudentTmpl.createEmbeddedView(null)
+      }
 
       this.ctr.insert(this.view);
     } catch (err) {

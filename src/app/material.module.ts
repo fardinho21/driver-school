@@ -11,6 +11,7 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatTreeModule } from "@angular/material/tree";
 import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
         MatTableModule,
         MatPaginatorModule,
         MatDialogModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatTreeModule
     ],
     exports: [
         MatSidenavModule,
@@ -42,7 +44,8 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
         MatTableModule,
         MatPaginatorModule,
         MatDialogModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatTreeModule
     ],
     providers: [
         {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}

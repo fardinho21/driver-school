@@ -1,1 +1,63 @@
-<p>course-content works!</p>
+<main>
+
+    <section>
+        <h4 style="display: inline;">Content</h4> 
+        <div mat-flat-button id="sync" class="glow-g tran-05s" (click)="syncFiles()"> <i class="fas fa-sync-alt"></i></div>
+        <mat-card class="mat-card-style">
+            <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                <mat-tree-node *matTreeNodeDef="let folder" matTreeNodeToggle>
+                    <li class="mat-tree-node glow-g tran-05s">
+                        {{folder.name}}
+                    </li>
+                </mat-tree-node>
+                <mat-nested-tree-node *matTreeNodeDef="let folder; when: hasChild">
+                    <li matTreeNodeToggle>
+                        <div class="mat-tree-node glow-g tran-05s" >
+                            <mat-icon class="mat-icon-rtl-mirror">
+                                {{treeControl.isExpanded(folder) ? 'folder_open' : 'folder'}}
+                            </mat-icon>
+                            {{folder.name}}
+                        </div>
+                        <ul [class.expand-folder]="!treeControl.isExpanded(folder)">
+                            <ng-container matTreeNodeOutlet></ng-container>
+                        </ul>
+                    </li>
+                </mat-nested-tree-node>
+            </mat-tree>
+
+        </mat-card>
+    </section>
+    
+    <section>
+        <h4>Add Content</h4>
+        <mat-card class="mat-card-style">
+            <form [formGroup]="createFileForm" class="flexcoleven" (ngSubmit)="onSubmit()">
+
+                <mat-form-field class="goldbackground">
+                    <input formControlName="fileName" type="text" matInput placeholder="File Name">
+                </mat-form-field>
+
+                <section id="fileupload" class="flexcoleven glow-g tran-05s" (click)="onChooseFile()">
+
+                    <input formControlName="file" type="file" #fileupload style="display:none">
+                    <i *ngIf="fileList.length == 0" class="fas fa-file-upload fa-2x"></i>
+                    <ng-container *ngIf="fileList.length > 0">
+                        <i  class="fas fa-file-alt fa-2x"></i>
+                        {{ fileList[0].name }}
+                    </ng-container>
+
+                </section>
+
+                <section class="flexroweven">
+                    <button class="glow-g tran-05s" mat-flat-button color="accent" type="submit">
+                        Upload
+                    </button>
+
+                    <mat-checkbox formControlName="createNewFolder"> Create new folder </mat-checkbox>
+                </section>
+
+            </form>
+        </mat-card>
+    </section>
+
+</main>

@@ -3,7 +3,7 @@
     <ng-container  #container></ng-container>
 </div>
 
-
+<!-- email dialog -->
 <ng-template #changeEmail>
     <form class="flexcoleven"  #f="ngForm" (ngSubmit)="onSubmit(f)">
         <mat-form-field>
@@ -23,6 +23,7 @@
 
 </ng-template>
 
+<!-- password dialog -->
 <ng-template #changePassword>
     <form class="flexcoleven"  #f="ngForm" (ngSubmit)="onSubmit(f)">
         <mat-form-field>
@@ -40,6 +41,7 @@
     </form>
 </ng-template>
 
+<!-- phone number dialog -->
 <ng-template #changePhone>
     <form #f="ngForm" (ngSubmit)="onSubmit(f)">
         <mat-form-field>
@@ -53,16 +55,26 @@
     </form>
 </ng-template>
 
+<!-- delete account dialog -->
 <ng-template #deleteAccount>
     <p>Delete Account works</p>
 </ng-template>
 
+<!-- share link dialog -->
 <ng-template #shareLink>
     <p>Share Link works</p>
 </ng-template>
 
+<!-- link paypal dialog -->
 <ng-template #linkPaypal>
  <p>Link paypal works</p>
+</ng-template>
+
+<!-- click student  -->
+<ng-template #studentInfo>
+    <p> Student Name: {{data.extra.firstName}}  {{data.extra.lastName}}</p> <br>
+    <p> Phone: {{data.extra.phoneNumber}}</p> <br>
+    <p> Email: {{data.extra.registeredEmail}} </p> <br>    
 </ng-template>
 
 

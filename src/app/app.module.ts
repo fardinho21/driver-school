@@ -20,14 +20,23 @@ import { MaterialModule } from "./material.module";
 
 declare global {
   export interface UserCredentials {
-    firstName: string,
+    firstName : string,
     lastName: string,
     birthDate: Date,
     isMinor: boolean,
     registeredEmail: string,
+    phoneNumber: string,
     password: string,
     parentFirstName?: string,
     parentLastName?: string,
+  }
+
+  export interface StudentInfo {
+    firstName : string,
+    lastName: string,
+    isMinor: boolean,
+    registeredEmail: string,
+    phoneNumber: string
   }
 
   export interface SessionElement {
@@ -35,6 +44,11 @@ declare global {
     date: string;
     price: number;
     type: string;
+  }
+
+  export interface Folder {
+    name: string,
+    contents?: Array<any | Folder >;
   }
 }
 

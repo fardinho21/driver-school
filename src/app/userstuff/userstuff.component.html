@@ -25,7 +25,13 @@
         </ng-container>
 
         <ng-container *ngIf="uiManager.accountType === 'instructor'">
-            <!-- material page for  -->
+            <app-student-registry *ngIf="selected==='students'">
+
+            </app-student-registry>
+
+            <app-course-content *ngIf="selected==='content'">
+
+            </app-course-content>
         </ng-container>
 
 

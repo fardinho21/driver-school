@@ -1,0 +1,46 @@
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+section {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+mat-card {
+    border: 1px solid red;
+    box-sizing: content-box;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.expand-folder {
+    display: none;
+}
+
+li:hover {
+    cursor: pointer;
+}
+
+#fileupload {
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid red;
+    padding: 4rem 0 4rem 0;
+    margin: 2rem 0 2rem 0;
+    height: 100px;
+    box-sizing: content-box;
+}
+
+#sync {
+    /* margin: 0 0 0 1rem; */
+
+    margin: 0 0 0 1rem;
+    padding: 0.10rem 0.25rem 0.10rem 0.25rem;
+    display: inline;
+    border-radius: 5px;
+    
+}
